@@ -4,10 +4,11 @@ import java.util.HashMap;
 
 public enum Operator {
 
-    PLUS("+"),
-    MINUS("-"),
+    POWER("^"),
     MULTIPLE("*"),
-    DIVIDE("/");
+    DIVIDE("/"),
+    PLUS("+"),
+    MINUS("-");
 
     private String symbol;
     private static HashMap<String, Operator> getByString;

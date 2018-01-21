@@ -1,4 +1,6 @@
+import parser.Operator;
 import parser.Parser;
+import parser.functionality.Functionality;
 
 public class Main {
 
@@ -20,7 +22,7 @@ public class Main {
         System.out.println(vzdalenostSikmehoVrhu(100, 60));
         System.out.println(vzdalenostSikmehoVrhu(100, 90));*/
 
-        Parser parser = new Parser("a+b*c+d-e+f/g");
+        Parser parser = new Parser("a+b*c+d-e+f/g^2+PI/EL");
         parser.setParameter("a", 4);
         parser.setParameter("b", 5);
         parser.setParameter("c", 2);
@@ -28,6 +30,7 @@ public class Main {
         parser.setParameter("e", 1);
         parser.setParameter("f", 3);
         parser.setParameter("g", 4);
+        parser.registerFunctionality(Functionality.PI, Functionality.EULER_NUMBER);
         double result = parser.calculate();
         System.out.println(String.format("Result: %s", result));
     }
