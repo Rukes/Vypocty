@@ -41,7 +41,7 @@ public class Parser {
 
     public double calculate(){
         double result = 0d;
-        String builder = getEquation().replaceAll(" ", "");
+        String builder = getEquation().trim().replaceAll(" ", "");
         System.out.println(builder);
         for(String parameter : getParameterMap().keySet()){
             builder = builder.replaceAll(parameter, String.valueOf(getParameterValue(parameter)));
