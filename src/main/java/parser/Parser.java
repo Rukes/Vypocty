@@ -5,6 +5,16 @@ import java.util.HashMap;
 
 public class Parser {
 
+    /*
+     * [CHECKED] přidat operátory * a /
+     * operator priority (přednost násobení a dělení)
+     * kontrola dělení 0
+     * podpora operátoru mocniny ^
+     * podpora závorek
+     * podpora PI
+     * podpora základních matematických funkcí
+     */
+
     private String equation;
     private HashMap<String, Double> parameterMap;
 
@@ -65,6 +75,12 @@ public class Parser {
                     break;
                 case MINUS:
                     result -= number;
+                    break;
+                case MULTIPLE:
+                    result *= number;
+                    break;
+                case DIVIDE:
+                    result /= number;
                     break;
             }
             operatorId++;

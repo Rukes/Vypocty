@@ -5,7 +5,9 @@ import java.util.HashMap;
 public enum Operator {
 
     PLUS("+"),
-    MINUS("-");
+    MINUS("-"),
+    MULTIPLE("*"),
+    DIVIDE("/");
 
     private String symbol;
     private static HashMap<String, Operator> getByString;

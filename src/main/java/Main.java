@@ -20,9 +20,14 @@ public class Main {
         System.out.println(vzdalenostSikmehoVrhu(100, 60));
         System.out.println(vzdalenostSikmehoVrhu(100, 90));*/
 
-        Parser parser = new Parser("a + b-1");
+        Parser parser = new Parser("a+b*c+d-e+f/g");
         parser.setParameter("a", 4);
         parser.setParameter("b", 5);
+        parser.setParameter("c", 2);
+        parser.setParameter("d", 3);
+        parser.setParameter("e", 1);
+        parser.setParameter("f", 3);
+        parser.setParameter("g", 4);
         double result = parser.calculate();
         System.out.println(String.format("Result: %s", result));
     }
