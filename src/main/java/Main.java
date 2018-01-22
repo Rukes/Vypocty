@@ -71,4 +71,24 @@ public class Main {
         double angolarRadians = Math.toRadians(uhel);
         return (Math.pow(rychlost, 2) / G) * Math.sin(2 * angolarRadians);
     }
+
+    public static double vypocetUheluSinu(double x, double y){
+        if(x == y){
+            throw new IllegalArgumentException("Čísla nesmí být rovna!");
+        }
+        if(x <= 0 || y <= 0){
+            throw new IllegalArgumentException("Čísla nesmí být menší nebo rovna nule!");
+        }
+        double odvesna;
+        double prepona;
+        if(x > y){
+            odvesna = y;
+            prepona = x;
+        }else{
+            odvesna = x;
+            prepona = y;
+        }
+        double arcosine = Math.asin(odvesna/prepona);
+        return Math.toDegrees(arcosine);
+    }
 }
