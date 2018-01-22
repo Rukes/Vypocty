@@ -62,7 +62,6 @@ public class Main {
     private static final double G = 9.823;
 
     /**
-     *
      * @param rychlost rychlost tělesa
      * @param uhel úhel tělesa na začátku vrhu
      * @return vzdálenost doletu tělesa
@@ -72,7 +71,12 @@ public class Main {
         return (Math.pow(rychlost, 2) / G) * Math.sin(2 * angolarRadians);
     }
 
-    public static double vypocetUheluSinu(double x, double y){
+    /**
+     * @param x jedna strana trojúhelníku
+     * @param y druhá strana trojúhelníku
+     * @return sinus úhlu ve stupních
+     */
+    private static double vypocetUheluSinu(double x, double y){
         if(x == y){
             throw new IllegalArgumentException("Čísla nesmí být rovna!");
         }
