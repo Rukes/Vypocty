@@ -109,7 +109,7 @@ public class Main {
      * @param odvesna1 první odvěsna trojúhelníku
      * @param odvesna2 druhá odvěsna trojúhelníku
      * @param prepona přepona trojúhelníku
-     * @return false pokud je jedna ze stran menší nebo rovna nule, false pokud jsou si odvěsny rovny, false pokud je přepona menší než jedna z odvěsen, true v opačných případehc
+     * @return false pokud je jedna ze stran menší nebo rovna nule, false pokud jsou si odvěsny rovny, false pokud je přepona menší než jedna z odvěsen, true v opačných případech
      */
     private static boolean jsouStranyPravouhlehoTrojuhelniku(double odvesna1, double odvesna2, double prepona){
         return !(odvesna1 <= 0 || odvesna2 <= 0 || prepona <= 0 || odvesna1 == odvesna2 || odvesna1 > prepona || odvesna2 > prepona);
