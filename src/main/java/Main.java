@@ -1,27 +1,9 @@
-import parser.Operator;
 import parser.Parser;
 import parser.functionality.Functionality;
 
 public class Main {
 
     public static void main(String[] args){
-        /*System.out.println(obsahObdelnika(83, 13));
-        System.out.println(obsahObdelnika(21, 44));
-        System.out.println(obsahObdelnika(21, 43));
-        System.out.println(obsahObdelnika(92.438612d, 32.82d));*/
-
-        /*System.out.println(trojuhelnikovaNerovnost(3, 5, 2));
-        System.out.println(trojuhelnikovaNerovnost(9, 7, 1));
-        System.out.println(trojuhelnikovaNerovnost(5, 1, 7));
-        System.out.println(trojuhelnikovaNerovnost(6, 6, 6));
-        System.out.println(trojuhelnikovaNerovnost(5, 4, 6));*/
-
-        /*System.out.println(vzdalenostSikmehoVrhu(100, 15));
-        System.out.println(vzdalenostSikmehoVrhu(100, 30));
-        System.out.println(vzdalenostSikmehoVrhu(100, 45));
-        System.out.println(vzdalenostSikmehoVrhu(100, 60));
-        System.out.println(vzdalenostSikmehoVrhu(100, 90));*/
-
         Parser parser = new Parser("a+b*c+d-e+f/g^2+PI/EL");
         parser.setParameter("a", 4);
         parser.setParameter("b", 5);
@@ -62,6 +44,7 @@ public class Main {
     private static final double G = 9.823;
 
     /**
+     * Výpočet vzdálenosti šikmého vrhu
      * @param rychlost rychlost tělesa
      * @param uhel úhel tělesa na začátku vrhu
      * @return vzdálenost doletu tělesa
@@ -72,6 +55,7 @@ public class Main {
     }
 
     /**
+     * Výpočet úhlu sinus trojúhelníku
      * @param x jedna strana trojúhelníku
      * @param y druhá strana trojúhelníku
      * @return sinus úhlu ve stupních
@@ -94,5 +78,40 @@ public class Main {
         }
         double arcosine = Math.asin(odvesna/prepona);
         return Math.toDegrees(arcosine);
+    }
+
+    /**
+     * Výpočet kořenů kvadratické rovnice
+     * @param a kvadratický člen
+     * @param b lineární člen
+     * @param c absolutní člen
+     * @return array kořenů kvadratické rovnice
+     */
+    private static double[] korenyKvadratickeRovnice(double a, double b, double c){
+        double d = Math.pow(b, 2) - 4 * a * c;
+        if(d < 0){
+            return new double[0];
+        }
+        double[] koreny;
+        if(d == 0){
+            koreny = new double[1];
+            koreny[0] = (-b + Math.pow(d, 1/2)) / 2*a;
+        }else{
+            koreny = new double[2];
+            koreny[0] = (-b + Math.pow(d, 1/2)) / 2*a;
+            koreny[1] = (-b - Math.pow(d, 1/2)) / 2*a;
+        }
+        return koreny;
+    }
+
+    /**
+     * Kontrola, zda-li strany trojúhelkůku jsou strany pravoúhlého trojúhelníku
+     * @param odvesna1 první odvěsna trojúhelníku
+     * @param odvesna2 druhá odvěsna trojúhelníku
+     * @param prepona přepona trojúhelníku
+     * @return false pokud je jedna ze stran menší nebo rovna nule, false pokud jsou si odvěsny rovny, false pokud je přepona menší než jedna z odvěsen, true v opačných případehc
+     */
+    private static boolean jsouStranyPravouhlehoTrojuhelniku(double odvesna1, double odvesna2, double prepona){
+        return !(odvesna1 <= 0 || odvesna2 <= 0 || prepona <= 0 || odvesna1 == odvesna2 || odvesna1 > prepona || odvesna2 > prepona);
     }
 }
