@@ -95,11 +95,11 @@ public class Main {
         double[] koreny;
         if(d == 0){
             koreny = new double[1];
-            koreny[0] = (-b + Math.pow(d, 1/2)) / 2*a;
+            koreny[0] = (-b + Math.pow(d, 1/2)) / (2*a);
         }else{
             koreny = new double[2];
-            koreny[0] = (-b + Math.pow(d, 1/2)) / 2*a;
-            koreny[1] = (-b - Math.pow(d, 1/2)) / 2*a;
+            koreny[0] = (-b + Math.pow(d, 1/2)) / (2*a);
+            koreny[1] = (-b - Math.pow(d, 1/2)) / (2*a);
         }
         return koreny;
     }
