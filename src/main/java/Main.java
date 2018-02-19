@@ -4,7 +4,7 @@ import parser.functionality.Functionality;
 public class Main {
 
     public static void main(String[] args){
-        /*Parser parser = new Parser("a+b*c+d-e+f/g^2+PI/EL");
+        Parser parser = new Parser("a+b*c+d-e+f/g^2+PI/EL");
         parser.setParameter("a", 4);
         parser.setParameter("b", 5);
         parser.setParameter("c", 2);
@@ -14,7 +14,7 @@ public class Main {
         parser.setParameter("g", 4);
         parser.registerFunctionality(Functionality.PI, Functionality.EULER_NUMBER);
         double result = parser.calculate();
-        System.out.println(String.format("Result: %s", result));*/
+        System.out.println(String.format("Result: %s", result));
     }
 
     /**
@@ -120,20 +120,18 @@ public class Main {
      * @param args Parametry vstupující do programu, známé jako main(String[] args)
      */
     private static void soucetArgumentuProgramu(String[] args){
-        if(args.length < 2){
-            System.out.println("Je potřeba zadat 2 čísla pro výpočet součtu.");
+        if(args.length <= 0){
+            System.out.println("Je potřeba zadat číselné parametry pro výpočet součtu.");
             return;
         }
         double soucet = 0;
-        String numberString;
         double number;
-        for(int i = 0; i < 2; i++){
-            numberString = args[i];
+        for (String argument : args) {
             try {
-                number = Double.parseDouble(numberString);
+                number = Double.parseDouble(argument);
             } catch (NumberFormatException ex) {
-                System.out.println("Chyba! Zadaná hodnota ("+numberString+") není číslo.");
-                return;
+                System.out.println("Chyba! Zadaná hodnota (" + argument + ") není číslo.");
+                continue;
             }
             soucet += number;
         }
