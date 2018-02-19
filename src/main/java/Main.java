@@ -116,7 +116,7 @@ public class Main {
     }
 
     /**
-     * Součet dvou číselných argumentů programu
+     * Součet všech číselných parametrů programu
      * @param args Parametry vstupující do programu, známé jako main(String[] args)
      */
     private static void soucetArgumentuProgramu(String[] args){
