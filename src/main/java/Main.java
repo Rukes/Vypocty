@@ -1,7 +1,6 @@
 public class Main {
 
     public static void main(String[] args){
-        DphCalc calc = new DphCalc();
     }
 
     /**
@@ -123,5 +122,51 @@ public class Main {
             soucet += number;
         }
         System.out.println("Součet čísel je "+soucet);
+    }
+
+    /**
+     * Sinus čísla
+     * @param a vstupní číslo
+     * @return sinus čísla
+     */
+    private static double sinus(double a){
+        double radians = Math.toRadians(a);
+        return Math.sin(a);
+    }
+
+    /**
+     * Výpočet logaritmu o základu 10
+     * @param a vstupní číslo (musí být větší jak 0)
+     * @return výpočet logaritmu o základu 10
+     */
+    private static double logaritmus(double a){
+        if(a <= 0){
+            throw new IllegalArgumentException("Hodnota nesmí být menší nebo rovna nule!");
+        }
+        return Math.log10(a);
+    }
+
+    /**
+     * Výpočet opačného čísla
+     * @param a vstupní čílo
+     * @return opačné číslo ke vstupnímu parametru
+     */
+    private static double flipNumber(double a){
+        return -a;
+    }
+
+    /**
+     * Výpočet matematického znaménka čísla
+     * @param a vstupní číslo
+     * @return znaménko vstupního čísla
+     */
+    private static int getMark(double a){
+        if(a < 0){
+            return -1;
+        }
+        if(a == 0){
+            return 0;
+        }
+        return 1;
     }
 }
