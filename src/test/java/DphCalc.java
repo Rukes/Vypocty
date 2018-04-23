@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class DphCalc {
 
-    DphCalc(){
+    public static void main(String[] args){
         double dph = -1;
         do{
             System.out.println("Zadejte DPH sazbu (v %):");

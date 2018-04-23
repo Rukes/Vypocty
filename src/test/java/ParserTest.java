@@ -3,7 +3,7 @@ import parser.functionality.Functionality;
 
 public class ParserTest {
 
-    ParserTest(){
+    public static void main(String[] args){
         Parser parser = new Parser("a+b*c+d-e+f/g^2+PI/EL");
         parser.setParameter("a", 4);
         parser.setParameter("b", 5);
