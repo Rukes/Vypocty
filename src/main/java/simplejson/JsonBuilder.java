@@ -12,7 +12,7 @@ public class JsonBuilder {
     }
 
     /**
-     * Append key & value to JSON builder
+     * Append key and value to JSON builder
      * @param key key object to append
      * @param value value object to append
      * @return current JsonBuilder
