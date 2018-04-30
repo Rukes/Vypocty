@@ -13,8 +13,10 @@ public class Array {
 
         int min = Integer.MAX_VALUE;
         int minPos = -1;
-        int max = -1;
+        int max = Integer.MIN_VALUE;
         int maxPos = -1;
+        int secondMax = Integer.MIN_VALUE;
+        int secondMaxPos = -1;
         int count = 0;
         StringBuilder builder = new StringBuilder();
 
@@ -23,6 +25,17 @@ public class Array {
             if(number < min){
                 min = number;
                 minPos = i;
+            }
+            if(number > max){
+                secondMax = max;
+                secondMaxPos = maxPos;
+                max = number;
+                maxPos = i;
+            }else{
+                if(number > secondMax){
+                    secondMax = number;
+                    secondMaxPos = i;
+                }
             }
             if(number > max){
                 max = number;
@@ -38,5 +51,6 @@ public class Array {
         System.out.println("Průměr: " + average);
         System.out.println("Nejnižší hodnota: " + min + " (" + minPos + ")");
         System.out.println("Nejvyšší hodnota: " + max + " (" + maxPos + ")");
+        System.out.println("Druhá nejvyšší hodnota: " + secondMax + " (" + secondMaxPos + ")");
     }
 }
